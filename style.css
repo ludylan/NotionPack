@@ -1,39 +1,112 @@
+/* --- 全局設定 --- */
 body {
-  background-color: #fdfaf6; /* 溫暖的米白色背景 */
-  margin: 0;
-  font-family: "Segoe UI", "Noto Sans JP", sans-serif; /* 使用更現代、圓潤的字體 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden; /* 隱藏滾動條，讓嵌入效果更好 */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f1ee; /* 溫柔的米色背景 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden; /* 隱藏滾動條 */
 }
 
-.clock-container {
-  background-color: rgba(255, 255, 255, 0.85); /* 帶點透明感的白色背景 */
-  border-radius: 24px;
-  padding: 30px 50px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* 更柔和的陰影 */
-  text-align: center;
-  transition: transform 0.3s ease; /* 加入一點過渡效果 */
+/* --- 珍奶杯主體 --- */
+.boba-cup {
+    width: 320px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.6); /* 半透明的杯身 */
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px); /* 毛玻璃效果 */
+    position: relative;
+    overflow: hidden; /* 確保內容不會溢出杯子 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 可以加入一個滑鼠懸停的互動效果 */
-.clock-container:hover {
-    transform: translateY(-5px);
+/* --- 時間與日期顯示 --- */
+.date-display {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #6b6b6b;
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
-.clock-time {
-  font-size: 64px;
-  font-weight: 600;
-  color: #4e4e4e; /* 深灰色文字 */
-  margin-bottom: 10px;
-  letter-spacing: 2px; /* 增加一點文字間距 */
+.time-display {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #3d3d3d;
+    font-size: 72px;
+    font-weight: 600;
 }
 
-.clock-label {
-  font-size: 16px;
-  color: #888888; /* 淺灰色文字 */
-  letter-spacing: 3px;
-  text-transform: uppercase; /* 文字大寫 */
+.seconds-display {
+    position: absolute;
+    top: 245px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #e57373; /* 紅色秒數 */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* --- 裝飾元素 --- */
+.straw {
+    position: absolute;
+    width: 15px;
+    height: 200px;
+    background-color: #ef5350; /* 紅色吸管 */
+    top: -40px;
+    right: 70px;
+    transform: rotate(15deg);
+    border-radius: 10px;
+    box-shadow: inset 2px -2px 5px rgba(0,0,0,0.15);
+}
+
+.milk-tea {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 180px; /* 奶茶高度 */
+    background-color: #c5a687; /* 奶茶顏色 */
+}
+
+/* --- 動態效果 --- */
+
+/* 1. 背景上升的氣泡 */
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float-up linear infinite;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px); /* 上升距離 */
+        opacity: 0;
+    }
+}
+
+/* 2. 底部晃動的珍珠 */
+.pearl {
+    position: absolute;
+    background-color: #352a2a;
+    border-radius: 50%;
+    animation: jiggle 3s ease-in-out infinite;
+}
+
+@keyframes jiggle {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-3px) translateX(1px); }
+    50% { transform: translateY(0) translateX(-1px); }
+    75% { transform: translateY(2px) translateX(2px); }
 }

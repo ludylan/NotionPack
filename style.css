@@ -1,31 +1,39 @@
-
 body {
-  background-color: #fdfaf6;
+  background-color: #fdfaf6; /* 溫暖的米白色背景 */
   margin: 0;
-  font-family: "Noto Sans JP", "Segoe UI", sans-serif;
+  font-family: "Segoe UI", "Noto Sans JP", sans-serif; /* 使用更現代、圓潤的字體 */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden; /* 隱藏滾動條，讓嵌入效果更好 */
 }
 
 .clock-container {
-  background-color: #ffffffdd;
+  background-color: rgba(255, 255, 255, 0.85); /* 帶點透明感的白色背景 */
   border-radius: 24px;
   padding: 30px 50px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* 更柔和的陰影 */
   text-align: center;
+  transition: transform 0.3s ease; /* 加入一點過渡效果 */
+}
+
+/* 可以加入一個滑鼠懸停的互動效果 */
+.clock-container:hover {
+    transform: translateY(-5px);
 }
 
 .clock-time {
   font-size: 64px;
   font-weight: 600;
-  color: #4e4e4e;
+  color: #4e4e4e; /* 深灰色文字 */
   margin-bottom: 10px;
+  letter-spacing: 2px; /* 增加一點文字間距 */
 }
 
 .clock-label {
-  font-size: 18px;
-  color: #888;
-  letter-spacing: 1px;
+  font-size: 16px;
+  color: #888888; /* 淺灰色文字 */
+  letter-spacing: 3px;
+  text-transform: uppercase; /* 文字大寫 */
 }

@@ -35,12 +35,13 @@ Notion 模組靈感棲地
 
 ## 📂 檔案結構
 notion-clock-widget/
-├── index.html # 主程式頁面
-├── style.css # 外觀樣式
-├── clock.js # 時鐘邏輯與整點提示
-├── chime.mp3 # 鈴聲音效檔案
-├── README.md # 你正在閱讀的這個檔案
-└── LICENSE # 授權條款
+├── index.html          # 主程式頁面
+├── style.css           # 外觀樣式
+├── clock.js            # 時鐘邏輯與整點提示
+├── chime.mp3           # 鈴聲
+├── README.md           # 專案說明
+└── LICENSE             # 授權條款
+
 
 ## 📄 授權條款
 

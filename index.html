@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>可愛時鐘小工具</title>
+    <title>珍珠奶茶動態時鐘</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="clock-container">
-        <div class="clock-time" id="clock-time">00:00</div>
-        <div class="clock-label">TIME</div>
+    <!-- 珍奶杯的主容器 -->
+    <div class="boba-cup">
+        <!-- 背景的動態氣泡將會被 JS 添加到這裡 -->
+        <div id="bubbles-container"></div>
+
+        <!-- 日期顯示區 -->
+        <div class="date-display" id="date-display"></div>
+        <!-- 主要時間顯示區 (時:分) -->
+        <div class="time-display" id="time-display"></div>
+        <!-- 秒數顯示區 -->
+        <div class="seconds-display" id="seconds-display"></div>
+
+        <!-- 吸管 -->
+        <div class="straw"></div>
+
+        <!-- 奶茶液體 -->
+        <div class="milk-tea">
+            <!-- 珍珠將會被 JS 添加到這裡 -->
+            <div id="pearls-container"></div>
+        </div>
     </div>
 
     <!-- 引用 JavaScript 檔案 -->
-    <script src="clock.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

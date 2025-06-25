@@ -32,7 +32,6 @@ body {
     color: #6b6b6b;
     font-size: 14px;
     letter-spacing: 0.5px;
-    z-index: 2;
 }
 
 .time-display {
@@ -103,6 +102,12 @@ body {
     background-color: #352a2a;
     border-radius: 50%;
     animation: jiggle 3s ease-in-out infinite;
+}
+.time-display,
+.date-display,
+.seconds-display {
+  z-index: 2;
+  position: absolute;
 }
 
 @keyframes jiggle {

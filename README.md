@@ -34,13 +34,16 @@ Notion 模組靈感棲地
     *   回到你的 Notion 頁面，輸入 `/embed` 並貼上你複製的網址。你的專屬時鐘就成功嵌入了！
 
 ## 📂 檔案結構
+```
 notion-clock-widget/
-├── index.html          # 主程式頁面
-├── style.css           # 外觀樣式
-├── clock.js            # 時鐘邏輯與整點提示
-├── chime.mp3           # 鈴聲
-├── README.md           # 專案說明
-└── LICENSE             # 授權條款
+├── index.html    # 主程式頁面
+├── style.css     # 外觀樣式
+├── clock.js      # 時鐘邏輯與整點提示
+├── chime.mp3     # 鈴聲
+├── README.md     # 專案說明
+└── LICENSE       # 授權條款
+```
+
 
 
 ## 📄 授權條款

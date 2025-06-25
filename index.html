@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glass Clock Widget</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f2f2f2, #e4e0dd);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .clock {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      font-size: 3rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="clock" id="clock">00:00:00</div>
+
+<audio id="chime" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+
+<script>
+  const clock = document.getElementById('clock');
+  const chime = document.getElementById('chime');
+  let lastHour = null;
+
+  function updateClock() {
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const s = String(now.getSeconds()).padStart(2, '0');
+    clock.textContent = `${h}:${m}:${s}`;
+
+    // 整點提示音
+    if (m === '00' && s === '00' && h !== lastHour) {
+      chime.play();
+      lastHour = h;
+    }
+  }
+
+  setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
